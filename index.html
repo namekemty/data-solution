@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DataSolution</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="media.css">
+  <script type="module" src="galaxy.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script> -->
+  
+</head>
+
+  <div class="page__layout">
+    <div class='canvas-container'></div>
+
+    <script src='https://unpkg.com/three@0.99.0/build/three.min.js'></script>
+    <script src='https://unpkg.com/three@0.99.0/examples/js/controls/OrbitControls.js'></script>
+    <script src='https://unpkg.com/three@0.99.0/examples/js/postprocessing/EffectComposer.js'></script>
+    <script src='https://unpkg.com/three@0.99.0/examples/js/postprocessing/RenderPass.js'></script>
+    <script src='https://unpkg.com/three@0.99.0/examples/js/postprocessing/ShaderPass.js'></script>
+    <script src='https://unpkg.com/three@0.99.0/examples/js/shaders/CopyShader.js'></script>
+    <script src='https://unpkg.com/three@0.99.0/examples/js/shaders/LuminosityHighPassShader.js'></script>
+    <script src='https://unpkg.com/three@0.99.0/examples/js/postprocessing/UnrealBloomPass.js'></script>
+
+
+    <script id='sphere-vertex-shader' type='x-shader/x-vertex'>
+        uniform float uTime;     
+        varying vec3 vNormal;
+        varying vec3 vPosition;      
+
+        void main() {
+            vNormal = normal;
+            
+            vec3 delta = 40.0 * normal * sin(
+                abs(normal.x) * 2.0 +
+                abs(normal.y) * 3.0 +
+                abs(normal.z) * 4.0 + uTime / 2.0);
+            
+            delta.x += 20.0 * sin(uTime * normal.z);
+            delta.y += 0.0 * sin(uTime * normal.x);
+            delta.z += 100.0 * sin(uTime * normal.y);
+            
+            vec3 newPosition = position + delta;
+            
+            vPosition = newPosition;
+
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
+            gl_PointSize = 1.0;
+        }
+        
+
+    </script>
+
+
+    <script id='sphere-fragment-shader' type='x-shader/x-fragment'>
+        uniform float uTime;       
+        varying vec3 vNormal;
+        varying vec3 vPosition;   
+        
+        void main() {
+            gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+        }       
+    </script>
+
+
+
+
+    <header class="header_main">
+      <div class="layout layout-top">
+        <div class="layout__content layout__content-grid">
+          <div class="layout__logo">
+            <img src="data.solution1.png" alt="logo">
+            <div class="up-logo">
+              <img src="data.solution1.png" alt="logo">
+            </div>
+          </div>
+          <div class="layout__nav-menu">
+            <div class="up">
+              <div class="links">
+                <a class="nav-link" href="#">О нас</a>
+                <a data-value="Наши решения" class="nav-link" href="#">Наши решения</a>
+                <a class="nav-link" href="#">Проекты</a>
+                <a class="nav-link" href="#">Как мы работаем</a>
+              </div>
+            </div>
+            <div></div>
+          </div>
+          <div class="layout__burger-menu">
+            <div class="up">
+              <div class="balls-box">
+                <div class="balls">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="5" cy="5" r="5" fill="#D9D9D9" />
+                  </svg>
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="5" cy="5" r="5" fill="#D9D9D9" />
+                  </svg>
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="5" cy="5" r="5" fill="#D9D9D9" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <body>  
+    </body>
+  </div>
+</html>
