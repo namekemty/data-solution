@@ -47,20 +47,20 @@ function initLights() {
 
 function initCamera() {
     CAMERA = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 2000);
-    CAMERA.position.z = 100;
+    CAMERA.position.z = 2100;
 
-    // gsap.to(CAMERA.position, {
-    //     z: 2090,
-    //     duration: 2,
-    //     ease: "sine.out",
-    //     onComplete: function () {
-    //       gsap.to(CAMERA.position, {
-    //         z: 100,
-    //         duration: 1,
-    //         ease: "sine.out",           
-    //       });
-    //     }
-    //   });
+    gsap.to(CAMERA.position, {
+        z: 2090,
+        duration: 2,
+        ease: "sine.out",
+        onComplete: function () {
+          gsap.to(CAMERA.position, {
+            z: 100,
+            duration: 1,
+            ease: "sine.out",           
+          });
+        }
+      });
     }
        
 
