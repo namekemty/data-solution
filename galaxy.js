@@ -51,13 +51,13 @@ function initCamera() {
 
     gsap.to(CAMERA.position, {
         z: 2090,
-        duration: 2,
-        ease: "sine.out",
+        duration: 1,
+        ease: "back.in",
         onComplete: function () {
           gsap.to(CAMERA.position, {
             z: 100,
-            duration: 1,
-            ease: "sine.out",           
+            duration: 2,
+            ease: "power2.out",           
           });
         }
       });
