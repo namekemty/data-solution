@@ -70,8 +70,11 @@ function initRenderer() {
     RENDERER.setSize(window.innerWidth, window.innerHeight);
     RENDERER.shadowMap.enabled = true;
     RENDERER.shadowMapSort = true;
+    RENDERER.physicallyCorrectLights = true;
     RENDERER.setClearColor(0x111, 0.3);
 }
+    
+    
 
 
 function initComposer() {
