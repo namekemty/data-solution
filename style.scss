@@ -113,12 +113,12 @@ height: 10000px;
 }
 
 .layout__content {
-  display: grid;
   max-width: 1680px;
   margin: 0 auto; 
 }
 
 .layout__content-grid {
+  display: grid;
   grid-template-areas: 'logo navig burger';
   grid-template-columns: 1fr 440px 1fr;
   grid-template-rows: 124px;
@@ -141,10 +141,18 @@ height: 10000px;
   grid-template-rows: 1fr 1fr; 
 }
 
+.layout__burger-menu {
+  grid-area: burger;
+  display: grid;
+  grid-template-areas: 'up-area' 'down-area';
+  grid-template-rows: 1fr 1fr;
+}
+
 .up {
   grid-area: up-area;
   display: flex;
   align-items: center;
+
   .links {
     display: flex;
     justify-content: space-between;
@@ -157,6 +165,7 @@ height: 10000px;
     }
   }
 
+  //balls
   .balls-box {
     display: flex;
     justify-content: right;
@@ -164,25 +173,37 @@ height: 10000px;
 
     .balls {
       display: flex;
-      gap: 14px;
+      justify-content:space-between;
+      align-items: center;
+      width: 58px;
+      cursor: pointer;     
+
+      .left-ball {
+        width: 10px;
+        height: 10px;
+      } 
+      .middle-ball {
+        width: 10px;
+        height: 10px;
+      } 
+      .right-ball {
+        width: 10px;
+        height: 10px;        
+      } 
     }
   }
 }
+
 .up-logo img {
     display: none;
     height: 67px;
-  
 }
+
 .down {
   grid-area: down-area;
 }
 
-.layout__burger-menu {
-  grid-area: burger;
-  display: grid;
-  grid-template-areas: 'up-area' 'down-area';
-  grid-template-rows: 1fr 1fr;
-}
+
 
 .nav-link {
   text-decoration:none ;
@@ -231,4 +252,3 @@ height: 10000px;
   position: absolute;
   z-index: -5;
 }
-
