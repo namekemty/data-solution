@@ -5,7 +5,7 @@ let RENDERER;
 let CONTROLS;
 let COMPOSER;
 
-let TIME = 10; // Let it be non zero at start
+let TIME = 10;
 
 
 main();
@@ -61,7 +61,7 @@ function initCamera() {
           });
         }
       });
-    }
+}
        
 
 function initRenderer() {
@@ -70,7 +70,6 @@ function initRenderer() {
     RENDERER.setSize(window.innerWidth, window.innerHeight);
     RENDERER.shadowMap.enabled = true;
     RENDERER.shadowMapSort = true;
-    RENDERER.physicallyCorrectLights = true;
     RENDERER.setClearColor(0x111, 0.3);
 }
     
@@ -85,7 +84,7 @@ function initComposer() {
     COMPOSER.addPass(renderPass);
 
     const bloomPass = new THREE.UnrealBloomPass(
-        new THREE.Vector2(window.innerWidth, window.innerHeight), 1.5, 1, 0.1);
+        new THREE.Vector2(window.innerWidth, window.innerHeight), 1.4, 1, 0);
     bloomPass.renderToScreen = true;
     COMPOSER.addPass(bloomPass);
 }
@@ -105,12 +104,17 @@ function initEventListeners() {
 }
 
 
+
 function onWindowResize() {
+    if (window.innerWidth < 1024) {
+        return;
+    }
+
     CAMERA.aspect = window.innerWidth / window.innerHeight;
     CAMERA.updateProjectionMatrix();
-
     RENDERER.setSize(window.innerWidth, window.innerHeight);
     COMPOSER.setSize(window.innerWidth, window.innerHeight);
+
 }
 
 
