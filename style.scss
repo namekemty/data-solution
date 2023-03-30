@@ -1,102 +1,82 @@
-html,
-body,
-p,
-ol,
-ul,
-li,
-dl,
-dt,
-dd,
-blockquote,
-figure,
-fieldset,
-legend,
-textarea,
-pre,
-iframe,
-hr,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  padding: 0;
+@import 'reset';
+@import 'hero_txts';
+@import 'herobutton';
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@font-face {
+  font-family: 'Ruberoid';
+  font-weight: 100;
+  font-style: normal;
+  src: url("/fonts/Ruberoid-Thin.woff2") format('woff2');
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: 100%;
-  font-weight: normal;
+@font-face {
+  font-family: 'Ruberoid';
+  font-weight: 200;
+  font-style: normal;
+  src: url("/fonts/Ruberoid-UltraLight.woff2") format('woff2');
 }
 
-ul {
-  list-style: none;
+@font-face {
+  font-family: 'Ruberoid';
+  font-weight: 300;
+  font-style: normal;
+  src: url("/fonts/Ruberoid-Light.woff2") format('woff2');
 }
 
-button,
-input,
-select {
-  margin: 0;
+
+@font-face {
+  font-family: 'Ruberoid';
+  font-weight: 400;
+  font-style: normal;
+  src: url("/fonts/Roboto-Regular.ttf") format('woff2');
 }
 
-html {
-  box-sizing: border-box;
+@font-face {
+  font-family: 'Ruberoid';
+  font-weight: 500;
+  font-style: normal;
+  src: url("/fonts/Ruberoid-Medium.woff2") format('woff2');
 }
 
-*, *::before, *::after {
-  box-sizing: inherit;
+@font-face {
+  font-family: 'Ruberoid';
+  font-weight: 600;
+  font-style: normal;
+  src: url("/fonts/Ruberoid-SemiBold.woff2") format('woff2');
 }
 
-img,
-video {
-  height: auto;
-  max-width: 100%;
+@font-face {
+  font-family: 'Ruberoid';
+  font-weight: 700;
+  font-style: normal;
+  src: url("/fonts/Ruberoid-Bold.woff2") format('woff2');
 }
 
-iframe {
-  border: 0;
+@font-face {
+  font-family: 'Ruberoid';
+  font-weight: 800;
+  font-style: normal;
+  src: url("/fonts/Ruberoid-ExtraBold.woff2") format('woff2');
 }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-td,
-th {
-  padding: 0;
-}
-//обнуление
-
-
-
-
-
-
-
-
-
-
-
-//обнуление
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-
 
 html {
   overflow-y: overlay
 }
 
+// .header_main {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+// } 
+
 body {
 background-color: #111;
 overflow-x: hidden;
 font-family: 'Roboto', sans-serif;
-height: 10000px;
+// height: 10000px;
 }
 
 .page__layout {
@@ -252,4 +232,28 @@ height: 10000px;
 .canvas-container {
   position: absolute;
   z-index: -5;
+}
+
+.hero-section {
+  height: calc(100vh - 158px);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  // padding-top: 10em;
+}
+
+.hero-text {
+  display: flex; 
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -158px;
+  
+}
+
+.hero-button {
+  padding-top: 2vh;
+  display: flex;
+  justify-content: center;
 }

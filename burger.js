@@ -1,5 +1,7 @@
 import { gsap } from "gsap";
 
+
+
 const balls = document.getElementById('idBalls');
 const leftBall = document.getElementById('leftBall');
 const middleBall = document.getElementById('middleBall');
@@ -17,3 +19,4 @@ balls.addEventListener('mouseleave', () => {
   gsap.to(leftBall, { duration: 0.2, transform: 'translate(0px, 0)', width: '10px' });
   gsap.to(rightBall, { duration: 0.2, transform: 'translate(0px, 0)', width: '10px' });
 });
+

@@ -11,6 +11,18 @@
   .layout-top {
     padding-top: 20px;
   }
+  .hero-section {
+    height: calc(100vh - 144px);
+  }
+
+  #hero-text1 {
+    width: 80vw;
+  }
+
+  #hero-text2 {
+    margin-top: 2vh;
+    width: 90vw;
+  }
 }
 
 @media screen and (max-width: 1023px) {
