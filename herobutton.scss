@@ -235,3 +235,9 @@ button svg {
   inline-size: 1.25em;
   translate: -25% -5%;
 }
+
+@media screen and (max-width: 425px) {
+  button {
+    scale: 0.9
+  }
+}
