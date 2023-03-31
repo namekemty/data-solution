@@ -82,7 +82,8 @@ function initCamera() {
                     delay: 0.5,
                     opacity: 0,    
                 });
-            },  
+            }
+            
 
           });
         },
