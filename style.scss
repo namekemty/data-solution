@@ -65,12 +65,12 @@ html {
   overflow-y: overlay
 }
 
-// .header_main {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-// } 
+.header_main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+} 
 
 body {
 background-color: #111;
@@ -107,12 +107,7 @@ height: 10000px;
 
 .layout__logo {
   grid-area: logo;
-  img {  
-    max-width: 264px;
-    min-height: 124px;
-  }
 }
-
 
 .layout__nav-menu {
   grid-area: navig;
@@ -174,9 +169,20 @@ height: 10000px;
   }
 }
 
+.big-logo img{
+  max-width: 264px;
+  min-height: 124px;
+}
+
 .up-logo img {
-    display: none;
-    height: 67px;
+  display: none;
+  height: 67px;
+}
+
+.hide-logo img {
+  position: fixed;
+  height: 67px;
+  top: -225px;
 }
 
 .down {
@@ -235,7 +241,7 @@ height: 10000px;
 }
 
 .hero-section {
-  height: calc(100vh - 158px);
+  height: 100vh;
   display: grid;
   grid-template-areas: 'hero-text' 'hero-button';
   justify-content: center;
@@ -251,7 +257,7 @@ height: 10000px;
   justify-content: flex-end;
   flex-direction: column;
   align-items: center;
-  margin-top: -158px;
+  // margin-top: -158px;
 }
 
 .hero-button {
@@ -259,4 +265,14 @@ height: 10000px;
   padding-top: 2vh;
   display: flex;
   justify-content: center;
+}
+
+.hello {
+  color:black;
+  background-color: grey;
+  height: 100vh;
+}
+
+.hello2 {
+  background-color: red;
 }
