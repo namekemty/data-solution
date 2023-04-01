@@ -51,64 +51,63 @@ function initCamera() {
     CAMERA = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 2000);
     CAMERA.position.z = 2100;
 
-    gsap.to(CAMERA.position, {
+    const tl = gsap.timeline();
+
+    tl.to(CAMERA.position, {
       z: 2090,
       duration: 1,
       ease: "back.in",
-      onComplete: 
+      onComplete:
 
-        function () {
-          gsap.to(CAMERA.position, {
-            z: 85,
-            duration: 2,
-            ease: "power2.out",
-            onComplete: function () {
-                
-                hero_text3.style.opacity = "1";
-                
-                gsap.from(hero_text3, {
-                    duration: 1.5,
-                    y: 20,
-                    ease: 'power2.out',
-                    opacity: 0,    
-                });
+      function () {
 
-                hero_button.style.opacity = "1";
+        const hero1 = document.querySelector(`#hero-text1`);
+        hero1.style.animation = `fill 0.6s ease forwards 2s`
 
-                gsap.from(hero_button, {
-                    duration: 1.5,
-                    y: 20,
-                    ease: 'power2.out',
-                    delay: 0.5,
-                    opacity: 0,    
-                });
-            }
-            
+        const hero2 = document.querySelector(`#hero-text2`);
+        hero2.style.animation = `fill 0.6s ease forwards 2s`
 
-          });
-        },
-
-        function () {
-
-          const hero1 = document.querySelector(`#hero-text1`);
-          hero1.style.animation = `fill 0.6s ease forwards 3s`
-
-          const hero2 = document.querySelector(`#hero-text2`);
-          hero2.style.animation = `fill 0.6s ease forwards 3s`
-
-          for (let i = 1; i <= 15; i++) {
-            let txt = document.querySelector(`#hero-text1 path:nth-child(${i})`);
-            txt.style.animation = `line-anim 3s ease forwards 2s`;
-          }
-
-          for (let i = 1; i <= 20; i++) {
-            let txt2 = document.querySelector(`#hero-text2 path:nth-child(${i})`);
-            txt2.style.animation = `line-anim 3s ease forwards 2s`;
-          }
+        for (let i = 1; i <= 15; i++) {
+          let txt = document.querySelector(`#hero-text1 path:nth-child(${i})`);
+          txt.style.animation = `line-anim 3s ease forwards 1s`;
         }
 
-    }); 
-}
+        for (let i = 1; i <= 20; i++) {
+          let txt2 = document.querySelector(`#hero-text2 path:nth-child(${i})`);
+          txt2.style.animation = `line-anim 3s ease forwards 1s`;
+        }
+      }
+    })
+    .to(CAMERA.position, {
+      z: 85,
+      duration: 2,
+      ease: "power2.out",
+
+      onComplete: 
+      
+      function () {
+                
+        hero_text3.style.opacity = "1";
+        
+        gsap.from(hero_text3, {
+            duration: 1.5,
+            y: 20,
+            ease: 'power2.out',
+            opacity: 0,    
+        });
+
+        hero_button.style.opacity = "1";
+
+        gsap.from(hero_button, {
+            duration: 1.5,
+            y: 20,
+            ease: 'power2.out',
+            delay: 0.5,
+            opacity: 0,    
+        });
+      }
+    });
+  }
        
 
 function initRenderer() {
