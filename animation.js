@@ -34,12 +34,17 @@ gsap.to(".big-logo", {
   }, 
 });
 
-gsap.to(".hide-logo", {
-  y: 101,
-  scrollTrigger: {
-    start:"900vh", 
-    end: "1000vh", 
-    scrub: 1,
-    // markers: true,
-  }, 
-});
+if(window.innerWidth > 1280) {
+  gsap.to(".hide-logo", {
+    y: 101,
+    scrollTrigger: {
+      start:"900vh", 
+      end: "1000vh", 
+      scrub: 1,
+      // markers: true,
+    }, 
+  });
+}
+
+
+
