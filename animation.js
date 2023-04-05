@@ -27,9 +27,9 @@ balls.addEventListener('mouseleave', () => {
 gsap.to(".big-logo", {
   y: -200,
   scrollTrigger: {
-    trigger: ".about-us",
-    start: "top",
-    end: "+=50",
+    trigger: "#about-us",
+    start: "-10",
+    end: "top",
     scrub: 1,
     // markers: true,
   }, 
@@ -39,9 +39,9 @@ if(window.innerWidth > 1280) {
   gsap.to(".hide-logo", {
     y: 101,
     scrollTrigger: {
-    trigger: ".about-us",
-    start: "top",
-    end: "0+=50",
+    trigger: "#about-us",
+    start: "-10",
+    end: "top",
     scrub: 1,
     // markers: true,
     }, 

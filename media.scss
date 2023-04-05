@@ -43,24 +43,22 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .about-us {
+  #about-us {
     grid-template-areas:
-  "name-area"
-  "desciption";
-  grid-template-rows: auto auto;
-  grid-template-columns: auto auto;
+    "name-area"
+    "desciption";
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
 
-  .name-area {
-    padding-top: 0rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    .name-area {
+      padding-top: 0rem;
+      align-items: end;
+      font-weight: 100 ;
+    }
 
-
-  .desciption {
-    padding-top: 0rem;
-  }
+    .desciption {
+      padding-top: 0;
+    }
   }
 }
 
@@ -71,5 +69,23 @@
   
   #hero-text2 {
     width: 90vw;
+  }
+
+  #about-us {
+
+    .name-area {
+      padding-top: 1em;
+    }
+
+    .desciption {
+      padding-top: 0;
+      font-size: 1.4em;
+    }
+  }
+
+  #our-solutions {
+    .name-area {
+      padding-top: 5em;
+    }
   }
 }
