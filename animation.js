@@ -27,10 +27,11 @@ balls.addEventListener('mouseleave', () => {
 gsap.to(".big-logo", {
   y: -200,
   scrollTrigger: {
-    start:"900vh", 
-    end: "1000vh", 
+    trigger: ".about-us",
+    start: "top",
+    end: "+=50",
     scrub: 1,
-    markers: true,
+    // markers: true,
   }, 
 });
 
@@ -38,13 +39,11 @@ if(window.innerWidth > 1280) {
   gsap.to(".hide-logo", {
     y: 101,
     scrollTrigger: {
-      start:"900vh", 
-      end: "1000vh", 
-      scrub: 1,
-      // markers: true,
+    trigger: ".about-us",
+    start: "top",
+    end: "0+=50",
+    scrub: 1,
+    // markers: true,
     }, 
   });
 }
-
-
-

@@ -1,4 +1,4 @@
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1279px) {
   .big-logo img {
     display: none;
   }
@@ -11,6 +11,18 @@
   .layout-top {
     padding-top: 20px;
   }
+
+  .about-us {
+   .name-area {
+    font-size: 3.2rem; 
+  }
+
+  .desciption {
+    font-size: 1.6rem;
+  }
+  }
+  
+
 }
 
 @media screen and (max-width: 1023px) {
@@ -29,6 +41,26 @@
 
   .layout__content-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .about-us {
+    grid-template-areas:
+  "name-area"
+  "desciption";
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto;
+
+  .name-area {
+    padding-top: 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .desciption {
+    padding-top: 0rem;
+  }
   }
 }
 

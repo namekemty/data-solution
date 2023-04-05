@@ -10,7 +10,6 @@ let TIME = 10;
 
 main();
 
-
 function main() {
     init();
     animate();
@@ -33,7 +32,6 @@ function init() {
 
 function initScene() {
     SCENE = new THREE.Scene();
-
     initLights();
 }
 
@@ -43,6 +41,7 @@ function initLights() {
     point.position.set(0, 100, 50);
     SCENE.add(point);
 }
+
 
 const hero_text3 = document.getElementById('hero-text3');
 const hero_button = document.getElementById('hero-button');
@@ -58,7 +57,6 @@ function initCamera() {
       duration: 1,
       ease: "back.in",
       onComplete:
-
       function () {
 
         const hero1 = document.querySelector(`#hero-text1`);
@@ -152,7 +150,7 @@ function initEventListeners() {
 
 
 function onWindowResize() {
-    if (window.innerWidth < 1024) {
+    if (window.innerWidth < 1280) {
         return;
     }
 
